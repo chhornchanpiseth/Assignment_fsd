@@ -1,69 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Html CRUD with pure javaScript </title>
-    <link rel= 'stylesheet' href = "styles.css">
-
+    <link rel='stylesheet' href="styles.css">
 </head>
+
 <body>
-    <table>
-        <tr>
-            <td>
-                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
-                    <div>
-                        <label>Full Name</label>
-                        <input type="text" name = "fullname" id = "fullName">   
-                    </div>
+    <div class="form">
+        <header>
+            <p>Country Info</p>
+        </header>
+        <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+            <section>
+                <label for="fullname">Full Name</label>
+                <input type="text" name="fullname" id="fullName" placeholder="Enter your Name...">
+            </section>
 
-                    <div>
-                        <label>Country Code</label>
-                        <input type="text" name = "countryCode" id= "countryCode">   
-                    </div>
+            <section>
+                <label for="countryCode">Country Code</label>
+                <input type="text" name="countryCode" id="countryCode" placeholder="Enter your Country code...">
+            </section>
 
-                    <div>
-                        <label>Country</label>
-                        <input type="text" name = "country" id= "country">   
-                    </div>
+            <section>
+                <label for="country">Country</label>
+                <input type="text" name="country" id="country" placeholder="Enter your Country name...">
+            </section>
 
-                    <div>
-                        <label>City</label>
-                        <input type="text" name = "city" id="city">   
-                    </div>  
+            <section>
+                <label for="city">City</label>
+                <input type="text" name="city" id="city" placeholder="Enter your current city...">
+            </section>
 
-                    <div class="form-action-buttons">
-                        <input type="submit" value="Submit">
+            <section class="button">
+                <input type="submit" value="Submit">
+            </section>
+        </form>
+        
+    </div>
 
-                    </div>
+    <div class="table-cont">
+        <table class="table table-striped">
+            <tr>
+                <td>
+                    <!--create another table in the second coulum of the first table -->
+                    <table class="list" id="tourist">
+                        <thead>
+                            <tr>
+                                <th>Full name</th>
+                                <th>Country Code</th>
+                                <th>Country</th>
+                                <th>City</th>
+                                <th>Edit/Delete</th>
+                            </tr>
+                        </thead>
 
-                    
-                </form>
-            </td>
+                        <tbody>
 
-            <td>    <!--create another table in the second coulum of the first table -->
-                <table class="list" id= "tourist">
-                    <thead>
-                        <tr>
-                            <th>Full name</th>
-                            <th>Country Code</th>
-                            <th>Country</th>
-                            <th>City</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                    </tbody>
+                        </tbody>
 
 
-                </table>
-            </td>
-        </tr>
-    </table>
-    
-    <script src= "script.js"></script>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script src="script.js"></script>
 </body>
+
 </html>
