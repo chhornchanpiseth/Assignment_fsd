@@ -1,7 +1,8 @@
 var selectedRow = null
 
 function onFormSubmit(){
-    var formData = readFormDate();
+    if (validate()) {   
+        var formData = readFormDate();
     if(selectedRow == null)
 
         insertNewRecord(formData);
@@ -9,6 +10,7 @@ function onFormSubmit(){
         updateRecord(formData);
 
     resetForm();
+    }
 }
 
 function readFormDate(){
@@ -33,14 +35,14 @@ function insertNewRecord(data) {
     cell4.innerHTML= data.city;
 
     cell4 = newRow.insertCell(4);
-    cell4.innerHTML= `<a onclick = "onEdit(this)">Edit</a>
+    cell4.innerHTML= `<a onclick = "onEdit(this)">Edit</a>   &nbsp;&nbsp;
                       <a onclick = "onDelete(this)">Delete</a>`;
 
 }
 
 function resetForm() {
-    document.getElementById("fullname").value="";
-    document.getElementById("countrycode").value="";
+    document.getElementById("fullName").value="";
+    document.getElementById("countryCode").value="";
     document.getElementById("country").value="";
     document.getElementById("city").value="";
 }
@@ -70,4 +72,20 @@ function onDelete(td){
     }
    
 }
+function validate() {
+    isValid1 = true;
+    if (document.getElementById("fullName").value == ""){
+        isValid1 = false;
+        document.getElementById("fullnameVl-error").classList.remove("hide");
+
+    }
+   
+    else {
+        isValid1 = true;
+        if(document.getElementById("fullnameVl-error").classList.contains("hide"));
+            document.getElementById("fullnameVl-error").classList.add("hide");
+    }
+    return isValid1;
+}
+
 
