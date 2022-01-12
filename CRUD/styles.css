@@ -34,7 +34,7 @@ body {
 }
 
 .form label {
-    color: #13232f;
+    color: #0b0c0c;
     font-size: 15px;
 }
 
@@ -112,4 +112,12 @@ table, th, tr {
 
   tr:nth-child(even) {
     background-color: #80ff80;
+}
+label.vl-error{
+    color: red;
+    margin-left: 10px;
+    font-size: small;
+}
+.hide{
+    display:none;
 }
